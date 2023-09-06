@@ -1,3 +1,4 @@
+import os
 """
 Django settings for atividade3 project.
 
@@ -25,8 +26,11 @@ SECRET_KEY = 'django-insecure-87fzl6i0=bf(01cjwe6mck!on2gvccru2zr3+mm7!uqwlrqeuf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS =[
+    '127.0.0.1',
+    'enzodeitos.pythonanywhere.com']
 
+STATIC_ROOT=os.path.join(BASE_DIR,'static')
 
 # Application definition
 
@@ -122,3 +126,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
