@@ -10,5 +10,6 @@ urlpatterns = [
     path('base', views.index),
     path('math/', views.match),
     path('forms/',views.cadastrar_usuario),
+    
 ]
 

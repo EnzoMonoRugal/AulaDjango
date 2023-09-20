@@ -13,7 +13,7 @@ def topic_view(req):
         "data": data
     }
 
-    return render(req, 'base_list.html', render_data)
+    return render(req, 'mtv/base_list.html', render_data)
 
     
 def access_view(req):
@@ -27,7 +27,7 @@ def access_view(req):
         "data": data
     }
 
-    return render(req, 'base_list.html', render_data)
+    return render(req, 'mtv/base_list.html', render_data)
 
 
 def page_view(req):
@@ -41,13 +41,13 @@ def page_view(req):
         "data": data
     }
 
-    return render(req, 'base_list.html', render_data)
+    return render(req, 'mtv/base_list.html', render_data)
 
 def index(request):
-    return render(request,'base_list.html')
+    return render(request,'mtv/base_list.html')
 
 def match(request):
-    return render(request,'index.html')
+    return render(request,'mtv/index.html')
 
 
 def cadastrar_usuario(request):
@@ -56,8 +56,8 @@ def cadastrar_usuario(request):
 
         if form.is_valid():
            form.save()
-        return render(request,'form.html',{'data':form.cleaned_data})
+        return render(request,'mtv/form.html',{'data':form.cleaned_data})
     else:
         form = UsuarioForm()
-    return render(request, "form.html", {'form':form})
+    return render(request, "mtv/form.html", {'form':form})
 
