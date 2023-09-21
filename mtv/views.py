@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Access, Page, Topic
 from .forms import UsuarioForm
 
+
 def topic_view(req):
     title = 'Topic'
     identifier = 'name'
@@ -43,6 +44,9 @@ def page_view(req):
 
     return render(req, 'mtv/base_list.html', render_data)
 
+def home(request):
+    return render(request, 'mtv/home.html',)
+
 def index(request):
     return render(request,'mtv/base_list.html')
 
@@ -60,4 +64,6 @@ def cadastrar_usuario(request):
     else:
         form = UsuarioForm()
     return render(request, "mtv/form.html", {'form':form})
+
+
 

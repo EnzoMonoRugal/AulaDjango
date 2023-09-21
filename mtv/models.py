@@ -31,3 +31,4 @@ class Usuario(models.Model):
     nome = models.CharField(max_length=20, null=False)
     email = models.EmailField(null=False)
     sexo = models.CharField(max_length=1, choices=SEXO_CHOICES)
+ 
