@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Access, Page, Topic
-from .forms import UsuarioForm
+from .forms import *
 
 
 def topic_view(req):
@@ -55,15 +55,19 @@ def match(request):
 
 
 def cadastrar_usuario(request):
+    form=UsuarioForm
+    mydict={
+        'form':form
+    }
     if request.method == "POST":
         form=UsuarioForm(request.POST)
 
         if form.is_valid():
-           form.save()
+            form.save()
         return render(request,'mtv/form.html',{'data':form.cleaned_data})
     else:
         form = UsuarioForm()
-    return render(request, "mtv/form.html", {'form':form})
+    return render(request, "mtv/form.html", context=mydict)
 
 
 

@@ -10,7 +10,7 @@ urlpatterns = [
     path('pages', views.page_view),
     path('base/', views.index, name='base_view'),
     path('math/', views.match, name='math_view'),
-    path('forms/',views.cadastrar_usuario),
+    path('forms/',views.cadastrar_usuario, name='forms_view'),
     
 ]
 

@@ -1,12 +1,17 @@
 from typing import Any, Dict
 from django import forms
 from .models import *
+from django.forms import ModelForm
 
 class UsuarioForm(forms.ModelForm):
     class Meta:
         model = Usuario
-        fields = ["nome", "email", "sexo"]
-    
+        fields = "__all__"
+        widgets={
+            'nome' : forms.TextInput(attrs={'class':'form-control'}),
+            'email' : forms.TextInput(attrs={'class':'form-control'}),
+            'sexo' : forms.Select(attrs={'class':'form-control'}),
+         }
     def clean_nome(self):
         nome = self.cleaned_data['nome']
 
