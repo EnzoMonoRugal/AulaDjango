@@ -1,0 +1,24 @@
+{% extends "mtv/base.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+</head>
+
+<body>
+    {% block body_block %}
+    <h1>Lista da entidade {{title}}</h1>
+    <ul>
+        {% for item in data %}
+            {{ item.identifier }}
+        {% endfor %}
+    </ul>
+    {% endblock %}
+   
+</body>
+
+</html>
